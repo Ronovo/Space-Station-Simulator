@@ -1,0 +1,295 @@
+{
+    "Player Name": "mn",
+    "Achievements": [],
+    "Unlocked": [],
+    "Round": 1,
+    "Character": {
+        "name": "Samantha Cristoforetti",
+        "job": "Staff Assistant",
+        "inventory": [],
+        "credits": 1000,
+        "location": {
+            "x": 3,
+            "y": 0
+        },
+        "stock_holdings": {},
+        "stock_market": {
+            "cycle_number": 1,
+            "day_number": 1,
+            "companies": [
+                {
+                    "name": "TechCorp",
+                    "current_value": 232.28192319216393,
+                    "previous_value": 226.92506711934968,
+                    "price_history": [
+                        288.2072664535442,
+                        262.31513545246315,
+                        244.83301386054907,
+                        245.36309830177152,
+                        226.92506711934968,
+                        232.28192319216393
+                    ],
+                    "owned_shares": 0
+                },
+                {
+                    "name": "GlobalBank",
+                    "current_value": 47.10473702983003,
+                    "previous_value": 48.54528367898633,
+                    "price_history": [
+                        52.575252862334224,
+                        52.74531532298427,
+                        49.352780273265324,
+                        46.733318802398955,
+                        48.54528367898633,
+                        47.10473702983003
+                    ],
+                    "owned_shares": 0
+                },
+                {
+                    "name": "HealthCare Plus",
+                    "current_value": 678.8250825832147,
+                    "previous_value": 685.0778105323817,
+                    "price_history": [
+                        738.0522081855103,
+                        758.8170698450367,
+                        752.0912337477046,
+                        687.6774437123731,
+                        685.0778105323817,
+                        678.8250825832147
+                    ],
+                    "owned_shares": 0
+                },
+                {
+                    "name": "EnergyCo",
+                    "current_value": 492.9462856674747,
+                    "previous_value": 498.6937936424311,
+                    "price_history": [
+                        580.8647421686804,
+                        534.1333588932627,
+                        563.1870739713426,
+                        528.3789644873061,
+                        498.6937936424311,
+                        492.9462856674747
+                    ],
+                    "owned_shares": 0
+                },
+                {
+                    "name": "FoodChain",
+                    "current_value": 649.8987070645463,
+                    "previous_value": 645.1841563615001,
+                    "price_history": [
+                        794.9744684479085,
+                        720.4691729939992,
+                        670.8783073355199,
+                        676.093993485992,
+                        645.1841563615001,
+                        649.8987070645463
+                    ],
+                    "owned_shares": 0
+                },
+                {
+                    "name": "AutoMakers",
+                    "current_value": 924.7898621843418,
+                    "previous_value": 891.5715254418458,
+                    "price_history": [
+                        913.6787706229059,
+                        856.955041487669,
+                        839.4139106790177,
+                        828.356330041525,
+                        891.5715254418458,
+                        924.7898621843418
+                    ],
+                    "owned_shares": 0
+                },
+                {
+                    "name": "RetailGiant",
+                    "current_value": 509.4109917896551,
+                    "previous_value": 543.3632906891969,
+                    "price_history": [
+                        559.1340539475317,
+                        527.5421001536708,
+                        538.7794437478274,
+                        514.1908187820909,
+                        543.3632906891969,
+                        509.4109917896551
+                    ],
+                    "owned_shares": 0
+                },
+                {
+                    "name": "PharmaTech",
+                    "current_value": 639.4830863073537,
+                    "previous_value": 670.0283310323449,
+                    "price_history": [
+                        529.6133059805353,
+                        577.4672696140747,
+                        607.084868174349,
+                        631.4311162360132,
+                        670.0283310323449,
+                        639.4830863073537
+                    ],
+                    "owned_shares": 0
+                },
+                {
+                    "name": "RealEstate Co",
+                    "current_value": 138.0780817877458,
+                    "previous_value": 132.81734827969004,
+                    "price_history": [
+                        104.16282085293663,
+                        104.70491890681602,
+                        113.80306388206512,
+                        123.24573237189986,
+                        132.81734827969004,
+                        138.0780817877458
+                    ],
+                    "owned_shares": 0
+                },
+                {
+                    "name": "MediaGroup",
+                    "current_value": 535.6405377113504,
+                    "previous_value": 512.2934430075035,
+                    "price_history": [
+                        488.6745833985033,
+                        515.1512489494203,
+                        472.58638895804705,
+                        492.75021763534625,
+                        512.2934430075035,
+                        535.6405377113504
+                    ],
+                    "owned_shares": 0
+                },
+                {
+                    "name": "Aerospace Inc",
+                    "current_value": 987.9956572510687,
+                    "previous_value": 928.6617239689506,
+                    "price_history": [
+                        981.0902059621181,
+                        1052.4514358830108,
+                        1042.9904624769279,
+                        1027.2075065360552,
+                        928.6617239689506,
+                        987.9956572510687
+                    ],
+                    "owned_shares": 0
+                },
+                {
+                    "name": "TechStart",
+                    "current_value": 314.5173000627402,
+                    "previous_value": 318.1225956659887,
+                    "price_history": [
+                        366.70918365428076,
+                        362.187496163654,
+                        358.05613619461775,
+                        344.2854847305223,
+                        318.1225956659887,
+                        314.5173000627402
+                    ],
+                    "owned_shares": 0
+                },
+                {
+                    "name": "GreenEnergy",
+                    "current_value": 396.1772603705962,
+                    "previous_value": 391.5156707219553,
+                    "price_history": [
+                        349.850750638718,
+                        352.4034880219129,
+                        376.59162546411653,
+                        372.7390830888488,
+                        391.5156707219553,
+                        396.1772603705962
+                    ],
+                    "owned_shares": 0
+                },
+                {
+                    "name": "DigitalBank",
+                    "current_value": 356.7731094057461,
+                    "previous_value": 378.87438118193535,
+                    "price_history": [
+                        492.9229560604594,
+                        495.8194411419423,
+                        449.1746419137154,
+                        408.6037998581295,
+                        378.87438118193535,
+                        356.7731094057461
+                    ],
+                    "owned_shares": 0
+                },
+                {
+                    "name": "SmartHome",
+                    "current_value": 502.5027519935258,
+                    "previous_value": 502.7752103356122,
+                    "price_history": [
+                        595.5648121345063,
+                        558.1332403686959,
+                        569.4412392518954,
+                        513.6686640481807,
+                        502.7752103356122,
+                        502.5027519935258
+                    ],
+                    "owned_shares": 0
+                }
+            ],
+            "last_update_time": "2025-04-10T01:17:12.091448",
+            "trade_log": []
+        },
+        "limbs": {
+            "left_arm": 100,
+            "right_arm": 100,
+            "left_leg": 100,
+            "right_leg": 100,
+            "chest": 100,
+            "head": 100
+        },
+        "damage": {
+            "burn": 0,
+            "poison": 0,
+            "oxygen": 0
+        },
+        "station_power": {
+            "battery_level": 24.823610853,
+            "solar_charging": true,
+            "last_update_time": "2025-04-10T01:17:36.545451",
+            "system_levels": {
+                "life_support": 10,
+                "hallway_lighting": 5,
+                "security_systems": 7,
+                "communication_array": 5
+            },
+            "power_mode": "balanced"
+        },
+        "notes": [],
+        "permissions": {
+            "security_station": false,
+            "medbay_station": false,
+            "bridge_station": false,
+            "engineering_station": false,
+            "bar_station": false,
+            "hop_station": false,
+            "botany_station": false
+        },
+        "botany": {
+            "planters": [
+                {
+                    "occupied": false,
+                    "plant": null,
+                    "growth_stage": 0
+                },
+                {
+                    "occupied": false,
+                    "plant": null,
+                    "growth_stage": 0
+                },
+                {
+                    "occupied": false,
+                    "plant": null,
+                    "growth_stage": 0
+                },
+                {
+                    "occupied": false,
+                    "plant": null,
+                    "growth_stage": 0
+                }
+            ],
+            "seeds": []
+        }
+    }
+}
