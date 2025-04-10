@@ -725,9 +725,6 @@ class Bridge:
     
     def access_captain_station(self):
         """Access the Captain's Station interface"""
-        # Show access confirmation for authorized personnel
-        self.bridge_window.after(10, lambda: messagebox.showinfo("Captain's Station", "Access granted. Welcome to the Captain's Station.", parent=self.bridge_window))
-        
         # Clear existing buttons
         for widget in self.button_frame.winfo_children():
             widget.destroy()
@@ -762,9 +759,6 @@ class Bridge:
     
     def access_hop_station(self):
         """Access the Head of Personnel (HoP) Station interface"""
-        # Show access confirmation for authorized personnel
-        self.bridge_window.after(10, lambda: messagebox.showinfo("HoP Station", "Access granted. Welcome to the Head of Personnel Station.", parent=self.bridge_window))
-        
         # Clear existing buttons
         for widget in self.button_frame.winfo_children():
             widget.destroy()
@@ -2625,7 +2619,7 @@ class Bar:
         # Create a popup for the drink menu
         menu_popup = tk.Toplevel(self.bar_window)
         menu_popup.title("Drink Menu")
-        menu_popup.geometry("700x600")  # Made wider to accommodate tab buttons
+        menu_popup.geometry("700x700")  # Made wider to accommodate tab buttons
         menu_popup.configure(bg="black")
         menu_popup.transient(self.bar_window)
         menu_popup.grab_set()
@@ -2633,7 +2627,7 @@ class Bar:
         # Center the popup
         menu_popup.update_idletasks()
         width = 700
-        height = 600
+        height = 700
         x = (menu_popup.winfo_screenwidth() // 2) - (width // 2)
         y = (menu_popup.winfo_screenheight() // 2) - (height // 2)
         menu_popup.geometry(f"{width}x{height}+{x}+{y}")

@@ -128,7 +128,15 @@ class SpaceStationGame:
             },
             "notes": []  # Add notes array to track important events
         }
-        
+
+        # --- Locker items data (Uses ALL_ITEMS definitions) ---
+        # Define the IDs of items initially in the locker
+        self.locker_item_ids = [
+            "welcome_guide", "flashlight", "station_map", "emergency_rations",
+            "basic_tools", "id_card_reader", "portable_scanner",
+            "maintenance_manual", "emergency_beacon", "first_aid_kit"
+        ]
+
         # Ship map configuration - Updated to include Botany Lab
         self.ship_map = {
             "-1,0": {"name": "Quarters", "desc": "Your personal quarters on the station."},
@@ -1808,20 +1816,11 @@ class SpaceStationGame:
         inventory_frame = tk.LabelFrame(main_container, text="Your Inventory", font=("Arial", 14), bg="black", fg="white", bd=2)
         inventory_frame.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True, padx=10, pady=5)
         
-        # --- Locker items data (Uses ALL_ITEMS definitions) ---
-        # Define the IDs of items initially in the locker
-        initial_locker_item_ids = [
-            "welcome_guide", "flashlight", "station_map", "emergency_rations", 
-            "basic_tools", "id_card_reader", "portable_scanner", 
-            "maintenance_manual", "emergency_beacon", "first_aid_kit"
-        ]
-        
         # Get full definitions for locker items
-        locker_item_defs = [get_item_definition(item_id) for item_id in initial_locker_item_ids if get_item_definition(item_id)]
+        locker_item_defs = [get_item_definition(item_id) for item_id in self.locker_item_ids if get_item_definition(item_id)]
 
         # Filter out items the player already has (compare by ID)
         player_inventory_ids = {item.get('id') for item in self.character_data.get("inventory", []) if isinstance(item, dict)}
-        filtered_items = [item_def for item_def in locker_item_defs if item_def.get('id') not in player_inventory_ids]
         
         # --- Create scrollable canvas for locker items ---
         locker_canvas = tk.Canvas(locker_frame, bg="black", highlightthickness=0)
@@ -1836,11 +1835,11 @@ class SpaceStationGame:
         locker_canvas.create_window((0, 0), window=locker_items_frame, anchor="nw")
         
         # --- Populate locker items frame (using item dictionaries) ---
-        if not filtered_items:
+        if not locker_item_defs:
             empty_label = tk.Label(locker_items_frame, text="The storage locker is empty.", font=("Arial", 12), bg="black", fg="white")
             empty_label.pack(pady=10, padx=10, anchor="w")
         else:
-            for i, item_def in enumerate(filtered_items):
+            for i, item_def in enumerate(locker_item_defs):
                 item_frame = tk.Frame(locker_items_frame, bg="dark gray", bd=2, relief=tk.RAISED, width=300)
                 item_frame.pack(fill=tk.X, pady=5, padx=5)
                 
@@ -1970,10 +1969,9 @@ class SpaceStationGame:
         has_item = any(isinstance(inv_item, dict) and inv_item.get('id') == item_id for inv_item in player_inventory)
         
         if not has_item:
-            player_inventory.append(item_def) # Add the dictionary
+            player_inventory.append(item_def)# Add the dictionary
+            self.locker_item_ids.remove(item_def.get("id"))
             self.show_storage()  # Refresh the storage view
-        else:
-             messagebox.showinfo("Already Have It", f"You already have a {item_name}.")
 
     def store_item(self, item_index):
         """Stores an item from the inventory into the locker, using the item's index."""
@@ -1983,6 +1981,8 @@ class SpaceStationGame:
              messagebox.showerror("Error", f"Invalid item index.")
              return
 
+        #Add item to locker
+        self.locker_item_ids.append(player_inventory[item_index].get("id"))
         # Remove item from player data by index
         del player_inventory[item_index]
 
