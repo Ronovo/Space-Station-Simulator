@@ -130,7 +130,14 @@ class MedBay:
                     status = "Critical"
                     critical_limbs.append(limb_name)
                 health_report += f"- {limb_name}: {health}% ({status})\n"
-            
+
+            health_report += "\nOther Damage:"
+            other_damage = self.player_data.get("damage", {})
+            health_report += f"\nBurn : {other_damage.get("burn")}%"
+            health_report += f"\nPoison : {other_damage.get("poison")}%"
+            health_report += f"\nOxygen : {other_damage.get("oxygen")}%\n"
+
+
             health_report += "\nRecommendation: "
             if overall_health < 60:
                 health_report += "Medical attention recommended."
@@ -157,7 +164,8 @@ class MedBay:
                 # Treatment options
                 health_report += "\n\nTreatment Options:"
                 health_report += "\n• Self-healing through rest"
-                health_report += "\n• Medical treatment by qualified doctor (50 credits)"
+                cost = self.calculate_doctor_cost()
+                health_report += f"\n• Medical treatment by qualified doctor ({cost} credits)"
                 if "permissions" in self.player_data and self.player_data["permissions"].get("medbay_station", False):
                     health_report += "\n• Advanced treatment available at MedBay Station"
         
@@ -166,26 +174,30 @@ class MedBay:
         # Make sure the window stays on top after dialog
         self.medbay_window.after(20, self.medbay_window.lift)
         self.medbay_window.focus_force()
-    
-    def talk_to_doctor(self):
-        """Talk to a doctor who can provide healing for a fee based on damage"""
+
+    def calculate_doctor_cost(self):
         # Calculate total damage
         total_blunt_damage = 0
         if "limbs" in self.player_data:
             for limb_health in self.player_data["limbs"].values():
                 total_blunt_damage += (100 - limb_health)
-                
+
         burn_damage = self.player_data["damage"].get("burn", 0)
         poison_damage = self.player_data["damage"].get("poison", 0)
         oxygen_damage = self.player_data["damage"].get("oxygen", 0)
-        
+
         # Calculate costs based on damage (rounding up)
         blunt_cost = math.ceil(total_blunt_damage / 3) if total_blunt_damage > 0 else 0
         burn_cost = math.ceil(burn_damage) if burn_damage > 0 else 0
         poison_cost = math.ceil(poison_damage / 3) * 2 if poison_damage > 0 else 0
         oxygen_cost = math.ceil(oxygen_damage) if oxygen_damage > 0 else 0
-        
+
         total_cost = blunt_cost + burn_cost + poison_cost + oxygen_cost
+        return total_cost
+
+    def talk_to_doctor(self):
+        """Talk to a doctor who can provide healing for a fee based on damage"""
+        total_cost = self.calculate_doctor_cost()
         
         if total_cost == 0:
             # No injuries to heal

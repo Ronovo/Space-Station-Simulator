@@ -308,9 +308,7 @@ class SpaceStationGame:
             # Update battery level
             current_level = self.character_data["station_power"]["battery_level"]
             new_level = max(0, min(100, current_level + net_change))
-            
-            # Debug print for battery changes
-            # print(f"Battery update: {current_level:.2f}% -> {new_level:.2f}%, Solar: {self.player_data['station_power']['solar_charging']}, Net Change: {net_change:.4f}% (Charge: {charge_rate:.4f}%, Discharge: {total_discharge_rate:.4f}%)")
+
             
             # Update player data with new battery level
             self.character_data["station_power"]["battery_level"] = new_level
